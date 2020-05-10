@@ -1,0 +1,301 @@
+@import "./tailwind.css";
+
+:root {
+  --yellow: #ffcb08;
+  --pink: #ed145a;
+  --teal: #6cccde;
+  --navy: #283593;
+  --dark: #0f1522;
+  --black: rgba(17, 17, 17, 0.9);
+  --grey: #eeeff0;
+  --body-bg: var(--dark);
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 2.4vw;
+  min-width: 420px;
+  background-color: #0f1522;
+  background-color: var(--body-bg);
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%2302051c' fill-opacity='0.4' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"); */
+}
+
+body {
+  @apply antialiased;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* font-family: Menlo, Monaco, "Courier New", monospace; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* min-height: calc(100vh - 4vw); */
+  height: calc(100vh - 4.8vw);
+  /* padding: 2vw; */
+  border-radius: 1.2rem;
+  overflow: auto;
+  @apply bg-black text-white shadow-lg;
+}
+
+.nuxt-link-active:not([class*="btn--"]),
+.nuxt-link-exact-active:not([class*="btn--"]),
+.text-shadow,
+::selection {
+  /* @apply text-pink; */
+  text-shadow: 2px 2px var(--teal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+button,
+a {
+  /* @apply text-navy; */
+  @apply no-underline;
+  color: inherit;
+  /* cursor: url(/img/curs_hover.svg), pointer; */
+}
+
+button:hover,
+a:focus,
+a:hover {
+  @apply text-pink;
+}
+
+p {
+  @apply mb-3;
+  @apply leading-loose;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* .vertical {
+  text-orientation: sideways;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+  font-size: 1.4rem;
+  text-align: center;
+} */
+
+.fadeIn {
+  animation: fadeIn_keys 700ms ease 200ms 1 forwards;
+}
+
+@keyframes fadeIn_keys {
+  to {
+    opacity: 1;
+  }
+}
+
+.will-transform {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 
+.lazy {
+  position: relative;
+  padding-top: 48%;
+}
+
+.lazy img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  opacity: 0;
+  transition: transform 100ms linear;
+  will-change: transform, opacity;
+}
+
+.lazy img:hover {
+  transform: scale(0.96);
+} */
+
+/* page transitions */
+
+.page-enter:after,
+.page-leave-active:after {
+  /* transition: opacity 200ms, transform 1200ms; */
+  /* will-change: transform;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-name: zoom; */
+  animation-play-state: running;
+}
+
+/* .page-leave-active {
+  animation-direction: reverse;
+} */
+/* .page-enter {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+} */
+
+/* .home:after, */
+main:after {
+  will-change: transform;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-name: zoom;
+  /* animation-play-state: paused; */
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  content: "";
+  position: fixed;
+  width: 200vmax;
+  height: 200vmax;
+  background-color: var(--pink);
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  opacity: 0.9;
+  /* transition: transform 2500ms ease-in-out; */
+  /* transform: translate3d(-50%, -50%, 0) scale(0); */
+  border-radius: 200vmax;
+  pointer-events: none;
+}
+
+@keyframes zoom {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
+
+  70% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
+}
+
+.wobble {
+  will-change: transform;
+  animation: wobble alternate 4s infinite;
+}
+
+@keyframes wobble {
+  from {
+    transform: translateY(-8px);
+  }
+
+  to {
+    transform: translateY(8px);
+  }
+}
+
+.bg-clip {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.wrap {
+  @apply mx-auto max-w-90;
+}
+
+.row {
+  @apply flex flex-wrap -mx-4;
+}
+
+.col {
+  @apply px-4 w-full;
+}
+
+.categories ul {
+  @apply list-none;
+}
+
+.categories li:not(:last-of-type) {
+  @apply mb-4;
+}
+
+@media screen and (min-width: 768px) {
+  .first {
+    order: 1;
+  }
+
+  .second {
+    order: 2;
+  }
+}
+
+.frame {
+  padding-top: 36%;
+  overflow: hidden;
+  position: relative;
+}
+
+.frame img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 100%;
+}
+
+/* https://css-tricks.com/snippets/css/fluid-typography/ */
+.font-stretch {
+  font-size: calc(36px + (80 - 36) * ((100vw - 320px) / (2200 - 320)));
+}
+
+.font-stretch--sm {
+  font-size: calc(24px + (60 - 24) * ((100vw - 320px) / (2200 - 320)));
+}
+
+::placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder,
+::-moz-placeholder,
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+textarea,
+select,
+input[type] {
+  @apply text-black;
+}
+
+/* icons from FA */
+
+svg:not(:root).svg-inline--fa {
+  overflow: visible;
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -0.125em;
+}
