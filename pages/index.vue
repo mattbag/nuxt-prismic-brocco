@@ -86,33 +86,33 @@ export default {
       // console.log("====");
 
       let posts = [];
-      if (postsFeatured) {
-        // Query to get posts content to preview
-        const blogPosts = await $prismic.api.query(
-          $prismic.predicates.at("document.type", "post"),
-          {
-            orderings: "[my.post.date desc]"
-          }
-        );
-        posts = await blogPosts.results.filter(p => {
-          // console.log("====");
-          // console.log(p);
-          // console.log("====");
-          return postsFeatured.items.find(po => {
-            // console.log("====");
-            // console.log(po.articles_to_link.uid);
-            // console.log("====");
-            return po.articles_to_link.uid === p.uid;
-          });
-        });
-      }
+      // if (postsFeatured) {
+      //   // Query to get posts content to preview
+      //   const blogPosts = await $prismic.api.query(
+      //     $prismic.predicates.at("document.type", "post"),
+      //     {
+      //       orderings: "[my.post.date desc]"
+      //     }
+      //   );
+      //   posts = await blogPosts.results.filter(p => {
+      //     // console.log("====");
+      //     // console.log(p);
+      //     // console.log("====");
+      //     return postsFeatured.items.find(po => {
+      //       // console.log("====");
+      //       // console.log(po.articles_to_link.uid);
+      //       // console.log("====");
+      //       return po.articles_to_link.uid === p.uid;
+      //     });
+      //   });
+      // }
       // Returns data to be used in template
       return {
         homepageContent,
-        body: homepageContent.body,
+        body: homepageContent.body
         // featured: homepageContent.body1,
-        posts_heading: $prismic.asText(postsFeatured.primary.title_of_section),
-        posts
+        // posts_heading: $prismic.asText(postsFeatured.primary.title_of_section),
+        // posts
       };
     } catch (e) {
       console.log("====");
