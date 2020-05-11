@@ -380,7 +380,11 @@ class Slide {
 class Slideshow {
   constructor(el) {
     if (!el) return;
-    this.DOM = { el: el };
+    this.DOM = {
+      el: el,
+      projects: document.querySelector("#projects_content"),
+      revealer: document.querySelector(".revealer")
+    };
     // The titles
     this.DOM.titlesWrap = this.DOM.el.querySelector(".titles-wrap");
     this.DOM.titlesInner = this.DOM.titlesWrap.querySelector(".grid--titles");
@@ -600,6 +604,12 @@ class Slideshow {
     const contentItem = this.DOM.contentItems[this.center];
     // Cursor styles related class
     this.DOM.el.classList[action === "open" ? "add" : "remove"]("content-open");
+    this.DOM.projects.classList[action === "open" ? "add" : "remove"](
+      "content-open"
+    );
+    this.DOM.revealer.classList[action === "open" ? "add" : "remove"](
+      "content-open"
+    );
 
     const movingSlides = [this.centerSlide, this.rightSlide, this.leftSlide];
     let promises = [];

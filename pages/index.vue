@@ -1,7 +1,34 @@
 <template>
   <main class="bubble home">
 
-    <div class="hero js loading">
+    <div class="min-h-screen flex items-center">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex px-12">
+          <div class="md:w-1/2 md:pr-24">
+            <h2 class="text-xl mb-8">WELCOME</h2>
+
+            <p class="text-lg leading-normal">Hi pleased to meet you, my name is
+              Louis Thomas, I am a Sydney based
+              product designer born in Manchester,
+              England.</p>
+          </div>
+          <div class="md:w-1/2">
+            <h1 class="text-4xl">
+              <span>
+                UX / UI
+                DESIGNER
+              </span>
+              <span>
+                &amp; CREATIVE
+                THINKER.
+              </span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero js loadingOFF">
       <div
         class="content"
         id="projects_content"
@@ -21,14 +48,12 @@
           <header class="content__item-header">
             <span class="content__item-header-meta">{{$prismic.asText(post.data.project_name)}}</span>
             <h2 class="content__item-header-title">
-              <!-- {{ post.data.project_short }} -->
-              [short]
+              {{$prismic.asText(post.data.project_short)}}
             </h2>
           </header>
           <div class="content__item-copy">
             <p class="content__item-copy-text">
-              <!-- {{ post.data.project_copy }} -->
-              [copy]
+              {{$prismic.asText(post.data.project_copy)}}
             </p>
             <nuxt-link
               :to="'/projects/' + post.uid"
@@ -90,41 +115,20 @@
     <!--  -->
     <div class="hero__screen"></div>
     <!--  -->
-    <div class="body wrap bg-black">
-      <section
-        class="py-20 px-8 relative max-w-xl mx-auto"
-        v-if="posts.length"
-      >
-        <span
-          class="text-vertical absolute left-0 text-xl"
-          :class="{'text-3xl -ml-4':posts.length>2}"
-        >{{"posts_heading"}}</span>
-        <!-- Here :post="post" passes the data to the component -->
-        <div class="max-w-sm mx-auto">
-          <div
-            v-for="(post,i) in posts"
-            :key="post.id"
-          >
-            <span>{{i++}}</span>
-            <span>{{$prismic.asText(post.data.project_name)}}</span>
-            <div
-              class="img img--content"
-              :style="'background-image: url('+ post.data.project_image.url +');'"
-            ></div>
-            <!-- <pre>{{post}}</pre> -->
-          </div>
-        </div>
-        <p class="text-right">
-          <nuxt-link to="/blog">
-            <carat>
-              More
-            </carat>
-          </nuxt-link>
+    <div class="body">
+      <div class="text-white max-w-md mx-auto p-10">
+        <h1 class="text-xl">Broccolou</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, corporis?
         </p>
-      </section>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <slices-block :slices="body" />
     </div>
 
-    <slices-block :slices="body" />
   </main>
 </template>
 

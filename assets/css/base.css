@@ -269,6 +269,7 @@ a:focus {
 
 .hero {
   position: fixed;
+  position: relative;
   min-height: 100vh;
   width: 100%;
 }
@@ -397,6 +398,10 @@ a:focus {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  visibility: hidden;
+}
+.revealer.content-open {
+  visibility: visible;
 }
 
 .revealer__inner {
@@ -651,9 +656,13 @@ a:focus {
   }
   .content {
     top: 0;
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100%;
+    visibility: hidden;
+  }
+  .content.content-open {
+    visibility: visible;
   }
   .content__item {
     height: 100vh;
