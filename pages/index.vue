@@ -192,7 +192,7 @@ export default {
       // console.log("====");
 
       window.animation = true;
-      setTimeout(window.animationSetup, 1000);
+      setTimeout(window.animationSetup, 0);
     }
   },
   head() {

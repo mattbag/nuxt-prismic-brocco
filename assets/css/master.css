@@ -109,29 +109,14 @@ img {
 
 /* page transitions */
 
-.page-enter:after,
-.page-leave-active:after {
-  transition: opacity 200ms;
-  will-change: opacity;
-  /* animation-duration: 500ms; */
-  /* animation-fill-mode: both; */
-  /* animation-name: zoom; */
-
-  /* animation-play-state: running; */
-  opacity: 1;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 500ms
 }
 
-/* .page-leave-active {
-  animation-direction: reverse;
-} */
-.page-enter {
-  opacity: 0;
-  /* transform: translateY(60px); */
-}
-
-.page-leave-to {
-  opacity: 0;
-  /* transform: translateY(-60px); */
+.page-enter,
+.page-leave-active {
+  opacity: 0
 }
 
 /* .home:after, */

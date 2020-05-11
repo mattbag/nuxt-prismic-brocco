@@ -4,7 +4,7 @@
       <!-- <ImageR :imageObj="pageContent.project_image" /> -->
 
       <prismic-image
-        class="h-full w-auto max-h-screen mx-auto w-full"
+        class="h-full w-auto max-h-screen mx-auto w-full opacity-50"
         v-if="pageContent.project_image_full"
         :field="pageContent.project_image_full"
       />
