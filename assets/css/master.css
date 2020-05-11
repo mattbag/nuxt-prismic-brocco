@@ -111,12 +111,12 @@ img {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 500ms
+  transition: opacity 500ms;
 }
 
 .page-enter,
 .page-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 
 /* .home:after, */
@@ -216,8 +216,12 @@ svg:not(:root).svg-inline--fa {
 }
 
 .text-stroke {
-  color: transparent;
   -webkit-text-stroke: 2px black;
+  color: transparent;
+}
+.text-stroke-w {
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
 }
 
 .subheading {

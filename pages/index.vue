@@ -186,12 +186,12 @@ export default {
   },
   mounted() {
     // window.initLayout();
-    if (!window.animation) {
+    if (!window.atlas_setup) {
       // console.log("====");
-      // console.log(window.animation);
+      // console.log(window.atlas_setup);
       // console.log("====");
 
-      window.animation = true;
+      window.atlas_setup = true;
       setTimeout(window.animationSetup, 0);
     }
   },
@@ -229,7 +229,7 @@ export default {
       ]
     };
   },
-  async asyncData({ $prismic, error }) {
+  async asyncData({ $prismic, error, store }) {
     // console.log("====");
     // console.log("asyncData");
     // console.log("====");
@@ -245,23 +245,27 @@ export default {
       // console.log($prismic.asText(postsFeatured.primary.title_of_section));
       // console.log("====");
 
-      let posts = [];
-
-      // Query to get posts content to preview
-      const blogPosts = await $prismic.api.query(
-        $prismic.predicates.at("document.type", "project"),
-        {
-          orderings: "[my.post.date desc]"
-        }
-      );
-
+      let projects = [];
+      if (!store.state.projects) {
+        // Query to get posts content to preview
+        // projects = await $prismic.api.query(
+        //   $prismic.predicates.at("document.type", "project"),
+        //   {
+        //     orderings: "[my.post.date desc]"
+        //   }
+        // );
+        // projects = projects.results;
+        await store.dispatch("getProjects", $prismic);
+        // } else {
+        //   projects = store.state.projects;
+      }
       // Returns data to be used in template
       return {
         homepageContent,
-        body: homepageContent.body,
+        body: homepageContent.body
         // featured: homepageContent.body1,
         // posts_heading: $prismic.asText(postsFeatured.primary.title_of_section),
-        posts: blogPosts.results
+        // posts: store.state.projects
       };
     } catch (e) {
       console.log("====");
@@ -272,7 +276,11 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
-  computed: {}
+  computed: {
+    posts() {
+      return this.$store.state.projects;
+    }
+  }
 };
 </script>
 

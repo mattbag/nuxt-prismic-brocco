@@ -5,9 +5,10 @@
 
       <prismic-image
         class="h-full w-auto max-h-screen mx-auto w-full opacity-50"
-        v-if="pageContent.project_image_full"
+        v-if="pageContent.project_image_full.length || Object.keys(pageContent.project_image_full).length > 0"
         :field="pageContent.project_image_full"
       />
+
       <div
         v-else
         class="py-32"
@@ -27,13 +28,33 @@
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices" />
     <!--  -->
-    <div class="back py-12 text-center">
-      <nuxt-link
-        exact
-        to="/#work"
-      >
-        VIEW ALL
-      </nuxt-link>
+    <div class="back py-12 text-center flex flex-wrap items-center justify-between px-8">
+      <div class="flex-grow">
+        <nuxt-link
+          class="text-stroke-w text-r6 uppercase"
+          v-if="prevNext.prev"
+          :to="prevNext.prev.slugs[prevNext.prev.slugs.length-1]"
+        >
+          pre
+        </nuxt-link>
+      </div>
+      <div class="flex-grow text-2xl">
+        <nuxt-link
+          exact
+          to="/#work"
+        >
+          VIEW ALL
+        </nuxt-link>
+      </div>
+      <div class="flex-grow">
+        <nuxt-link
+          class="text-stroke-w text-r6 uppercase"
+          v-if="prevNext.next"
+          :to="prevNext.next.slugs[prevNext.next.slugs.length-1]"
+        >
+          nxt
+        </nuxt-link>
+      </div>
     </div>
   </main>
 </template>
@@ -51,12 +72,13 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try {
       // Query to get post content
-      const post = (await $prismic.api.getByUID("project", params.uid)).data;
+      const post = await $prismic.api.getByUID("project", params.uid);
 
       // Returns data to be used in template
       return {
-        pageContent: post,
-        slices: post.body
+        pageContent: post.data,
+        slices: post.data.body,
+        projectID: post.id
         // formattedDate: Intl.DateTimeFormat("en-US", {
         //   year: "numeric",
         //   month: "short",
@@ -76,23 +98,35 @@ export default {
     };
   },
   computed: {
-    pad() {
-      return (
-        (100 * this.pageContent.post_image.dimensions.height) /
-          this.pageContent.post_image.dimensions.width +
-        "%"
+    prevNext() {
+      const current = this.$store.state.projects.find(
+        prj => prj.id === this.projectID
       );
+
+      const currentIndex = this.$store.state.projects.indexOf(current);
+      const _length = this.$store.state.projects.length;
+
+      return {
+        currentIndex,
+        _length,
+        prev: this.$store.state.projects[
+          currentIndex - 1 < 0 ? _length - 1 : currentIndex - 1
+        ],
+        next: this.$store.state.projects[
+          currentIndex + 1 > _length - 1 ? 0 : currentIndex + 1
+        ]
+      };
     }
+    // pad() {
+    //   return (
+    //     (100 * this.pageContent.post_image.dimensions.height) /
+    //       this.pageContent.post_image.dimensions.width +
+    //     "%"
+    //   );
+    // }
   }
 };
 </script>
 
 <style lang="sass" scoped>
-.title
-  width: 8rem
-  height: 8rem
-  top: 1rem
-.height
-  height: 60vh
-.top
 </style>

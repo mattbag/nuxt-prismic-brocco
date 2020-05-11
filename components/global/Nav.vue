@@ -5,7 +5,7 @@
         <li>
           <nuxt-link
             to="/"
-            class="text-lg"
+            class="text-xl bg-white p-1"
           >
             <i>
               <strong>
