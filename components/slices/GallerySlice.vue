@@ -1,20 +1,12 @@
 <template functional>
-  <article class="gallery my-8 items-center">
-    <ImageR
+  <article class="wrap flex flex-wrap my-8 items-center justify-center">
+    <prismic-image
       v-for="img in props.slice.items"
       :key="img.gallery_image.url"
-      class="gallery__item rounded-sm overflow-hidden shadow-lg"
-      :imageObj="img.gallery_image"
-      :fixed="'60%'"
+      :field="img.gallery_image"
+      class="m-4"
     >
-      <nuxt-link
-        class="absolute w-full h-full z-10 left-0 top-0"
-        v-if="img.linked && img.linked.type"
-        :to="'/'+img.linked.type +'/'+ img.linked.slug"
-      >
-      </nuxt-link>
-
-    </ImageR>
+    </prismic-image>
   </article>
 </template>
 

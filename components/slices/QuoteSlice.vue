@@ -1,6 +1,6 @@
 <template>
-  <div class='post-part single container QuoteSlice'>
-    <blockquote class="block-quotation">
+  <div class='post-part single wrap QuoteSlice text-center'>
+    <blockquote class="block-quotation max-w-80 mx-auto text-2xl py-10 border-white border-t border-b">
       {{ $prismic.asText(slice.primary.quote) }}
     </blockquote>
   </div>
@@ -15,26 +15,8 @@ export default {
 
 <style lang="sass" scoped>
 .block-quotation
-  margin-bottom: 2rem
-  display: inline-block
-  font-style: italic
-  font-size: 24px
   &:before
     content: "« "
   &:after
     content: " »"
-.block-citation
-  display: inline-block
-  font-style: italic
-  border-left: solid #B4B4B4 4px
-  padding-left: 10px
-
-@media screen and (min-width: 975px)
-  .block-quotation
-    width: 130%
-    margin: 0 -15% 2rem -15%
-    font-size: 30px
-    padding: 0
-  .block-citation
-    margin: 20px 0
 </style>

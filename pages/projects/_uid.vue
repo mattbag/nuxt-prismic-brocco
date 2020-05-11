@@ -1,37 +1,37 @@
 <template>
-  <main class="bubble blog-uid-post px-10 wrap">
-    <div class="row my-12 items-end">
-      <div
-        class="col md:w-2/3"
-        v-if="pageContent.featured_image"
-      >
-        <ImageR :imageObj="pageContent.featured_image" />
-      </div>
+  <main class="projects-uid bg-black text-white">
+    <div class="top relative text-center">
+      <!-- <ImageR :imageObj="pageContent.project_image" /> -->
 
-      <div class="col md:w-1/3 flex items-center">
-        <div class="relative">
-          <!-- Template for page title -->
+      <prismic-image
+        class="h-full w-auto max-h-screen mx-auto w-full"
+        v-if="pageContent.project_image_full"
+        :field="pageContent.project_image_full"
+      />
+      <div class="absolute w-full h-full top-0 flex items-center justify-center">
+        <div class="text-center text-white">
           <h1
-            class="blog-title text-4xl mt-4"
+            class="blog-title text-6xl mt-4 font-bold lowercase"
             style="white-space:nowrap"
           >{{ $prismic.asText(pageContent.project_name) }}</h1>
 
+          <p>[sub]</p>
         </div>
       </div>
     </div>
 
     <!-- Slice Block Componenet tag -->
-    <slices-block :slices="slices" />
     <slices-block :slices="gallery" />
+    <slices-block :slices="slices" />
     <!--  -->
-    <div class="back my-8 text-right">
+    <div class="back py-12 text-center">
       <nuxt-link
         exact
-        to="/work"
+        to="/#work"
       >
-        <carat>
-          More work
-        </carat>
+
+        VIEW ALL
+
       </nuxt-link>
     </div>
   </main>
@@ -70,6 +70,11 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
+  head() {
+    return {
+      title: this.$prismic.asText(this.pageContent.project_name) + " | Work"
+    };
+  },
   computed: {
     pad() {
       return (
@@ -89,4 +94,5 @@ export default {
   top: 1rem
 .height
   height: 60vh
+.top
 </style>

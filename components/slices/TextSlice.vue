@@ -1,7 +1,7 @@
 <template>
-  <div class='post-part single max-w-lg mx-auto my-12'>
+  <div class='post-part single max-w-lg mx-auto my-20'>
     <prismic-rich-text
-      class="textslice"
+      class="textslice text-xl"
       :field="slice.primary.text"
     />
   </div>
@@ -18,4 +18,6 @@ export default {
 .textslice
   a
     text-decoration: underline
+  p
+    @apply leading-tight
 </style>

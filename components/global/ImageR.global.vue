@@ -4,7 +4,7 @@
     v-bind="$attrs"
     :style='{"padding-top":pad}'
   >
-    <div class="absolute top-0 left-0 w-full h-full">
+    <div class="absolute top-0 left-0">
       <prismic-image
         class="h-full w-full max-w-none"
         v-if="imageObj"
