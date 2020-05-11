@@ -9,11 +9,11 @@ module.exports = {
     colors: {
       black: "#111",
       dark: "#0f1522",
-      white: "#eeeff0",
-      yellow: "#ffcb08",
-      green: "#9AE6B4",
-      pink: "#ed145a",
-      teal: "#6cccde"
+      white: "#fff",
+      // yellow: "#ffcb08",
+      // green: "#9AE6B4",
+      pink: "#e5495f"
+      // teal: "#6cccde"
     },
     extend: {
       maxWidth: {

@@ -17,7 +17,7 @@
         </li>
         <li> <button
             id="hamburger"
-            class="bg-white p-1 off"
+            class="bg-white p-1 off js-slide-close"
           >menu</button></li>
       </ul>
     </nav>
@@ -26,17 +26,19 @@
         <ul>
           <li>
             <nuxt-link
-              class="js-menu-off text-stroke"
+              class="js-menu-off text-stroke hover:text-black"
               to="/"
             >Home</nuxt-link>
           </li>
-          <li><a
-              href="#work"
-              class="js-menu-off text-stroke"
-            >Work</a></li>
+          <li>
+            <nuxt-link
+              to="/#work"
+              class="js-menu-off text-stroke hover:text-black"
+            >Work</nuxt-link>
+          </li>
           <li><a
               href="#contact"
-              class="js-menu-off text-stroke"
+              class="js-menu-off text-stroke hover:text-black"
             >Contact</a></li>
         </ul>
       </nav>

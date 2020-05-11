@@ -133,7 +133,7 @@ img {
 } */
 
 /* .home:after, */
-main:after {
+._main:after {
   will-change: transform;
   animation-duration: 1000ms;
   animation-fill-mode: both;
@@ -154,35 +154,6 @@ main:after {
   /* transform: translate3d(-50%, -50%, 0) scale(0); */
   border-radius: 200vmax;
   pointer-events: none;
-}
-
-@keyframes zoom {
-  0% {
-    transform: translate3d(-50%, -50%, 0) scale(0);
-  }
-
-  70% {
-    transform: translate3d(-50%, -50%, 0) scale(1);
-  }
-
-  100% {
-    transform: translate3d(-50%, -50%, 0) scale(0);
-  }
-}
-
-.wobble {
-  will-change: transform;
-  animation: wobble alternate 4s infinite;
-}
-
-@keyframes wobble {
-  from {
-    transform: translateY(-8px);
-  }
-
-  to {
-    transform: translateY(8px);
-  }
 }
 
 .bg-clip {
@@ -208,16 +179,6 @@ main:after {
 
 .categories li:not(:last-of-type) {
   @apply mb-4;
-}
-
-@media screen and (min-width: 768px) {
-  .first {
-    order: 1;
-  }
-
-  .second {
-    order: 2;
-  }
 }
 
 .frame {

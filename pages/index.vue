@@ -36,7 +36,7 @@
     </div>
 
     <div
-      class="hero js loadingOff"
+      class="hero js loading"
       id="work"
     >
       <div
