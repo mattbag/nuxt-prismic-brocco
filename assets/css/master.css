@@ -275,3 +275,12 @@ svg:not(:root).svg-inline--fa {
   height: 1em;
   vertical-align: -0.125em;
 }
+
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+.subheading {
+  @apply .font-bold text-xl mb-8 tracking-widest uppercase;
+  letter-spacing: 0.6em;
+}

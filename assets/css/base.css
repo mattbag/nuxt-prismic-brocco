@@ -189,12 +189,12 @@ body {
 }
 
 body {
-  --color-text: #5d5d5d;
-  --color-bg: #e6e6ea;
+  --color-bg: #fff;
   --color-link: #838288;
   --color-link-hover: #000;
   --color-number: #000;
   --color-title: #000;
+  --color-text: var(--color-title);
   --color-caption: var(--color-link);
   --color-content: #000;
   --color-content-bg: var(--color-bg);

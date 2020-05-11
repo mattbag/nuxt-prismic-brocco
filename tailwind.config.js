@@ -7,7 +7,7 @@
 module.exports = {
   theme: {
     colors: {
-      black: "#1a1a1a",
+      black: "#111",
       dark: "#0f1522",
       white: "#eeeff0",
       yellow: "#ffcb08",
@@ -19,6 +19,9 @@ module.exports = {
       maxWidth: {
         "80": "80rem",
         "90": "90rem"
+      },
+      fontSize: {
+        r5: "5rem"
       },
       borderRadius: {
         xl: "1.2rem"

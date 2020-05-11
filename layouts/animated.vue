@@ -52,10 +52,10 @@
     </pre> -->
     <nuxt keep-alive />
     <footer-prismic />
-    <script src="/animation/charming.min.js"></script>
+    <!-- <script src="/animation/charming.min.js"></script>
     <script src="/animation/imagesloaded.pkgd.min.js"></script>
     <script src="/animation/TweenMax.min.js"></script>
-    <script src="/animation/animation.js"></script>
+    <script src="/animation/animation.js"></script> -->
   </div>
 
 </template>

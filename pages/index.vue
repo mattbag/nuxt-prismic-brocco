@@ -1,11 +1,15 @@
 <template>
-  <main class="bubble home">
+  <main class="bubble home overflow-hidden">
 
     <div class="min-h-screen flex items-center">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex px-12">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="flex px-12 items-center">
           <div class="md:w-1/2 md:pr-24">
-            <h2 class="text-xl mb-8">WELCOME</h2>
+            <h2 class="subheading">
+              <strong>
+                WELCOME
+              </strong>
+            </h2>
 
             <p class="text-lg leading-normal">Hi pleased to meet you, my name is
               Louis Thomas, I am a Sydney based
@@ -13,14 +17,17 @@
               England.</p>
           </div>
           <div class="md:w-1/2">
-            <h1 class="text-4xl">
-              <span>
+            <h1 class="text-6xl md:text-r5 leading-tight">
+              <span class="text-stroke">
                 UX / UI
                 DESIGNER
               </span>
+              <br>
               <span>
                 &amp; CREATIVE
-                THINKER.
+                <strong>
+                  THINKER.
+                </strong>
               </span>
             </h1>
           </div>
@@ -57,7 +64,7 @@
             </p>
             <nuxt-link
               :to="'/projects/' + post.uid"
-              class="content__item-copy-more"
+              class="content__item-copy-more js-slide-close"
             >more +</nuxt-link>
           </div>
         </article>
@@ -113,21 +120,39 @@
       </div>
     </div>
     <!--  -->
-    <div class="hero__screen"></div>
+    <!-- <div class="hero__screen"></div> -->
     <!--  -->
-    <div class="body">
-      <div class="text-white max-w-md mx-auto p-10">
-        <h1 class="text-xl">Broccolou</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, corporis?
-        </p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
+    <div class="min-h-screen flex items-center">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="flex px-12 items-center">
+          <div class="md:w-1/2 md:pr-24">
+            <h2 class="text-6xl md:text-r5 leading-tight">
+              <span class="text-stroke">
+                PLEASE <br> SAY
+              </span>
+              <br>
+              <span>
+                <strong>
+                  HI.
+                </strong>
+              </span>
+            </h2>
+          </div>
+          <div class="md:w-1/2">
+            <p class="subheading">get in touch</p>
+            <ul>
+              <li>
+                [email]
+              </li>
+              <li>
+                [social]
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <slices-block :slices="body" />
     </div>
+    <!-- <slices-block :slices="body" /> -->
 
   </main>
 </template>
@@ -135,18 +160,25 @@
 <script>
 //Importing all the slices components
 import SlicesBlock from "~/components/SlicesBlock.vue";
-import BlogWidget from "~/components/BlogWidget.vue";
+// import BlogWidget from "~/components/BlogWidget.vue";
 // import { initLayout } from "./../animation/animation";
 export default {
   name: "Home",
-  layout: "animated",
+  // layout: "animated",
   components: {
-    SlicesBlock,
-    BlogWidget
+    // SlicesBlock,
+    // BlogWidget
   },
   mounted() {
     // window.initLayout();
-    setTimeout(window.initLayout, 1000);
+    if (!window.animation) {
+      // console.log("====");
+      // console.log(window.animation);
+      // console.log("====");
+
+      window.animation = true;
+      setTimeout(window.animationSetup, 1000);
+    }
   },
   head() {
     return {
@@ -156,6 +188,28 @@ export default {
           hid: "description",
           name: "description",
           content: this.$prismic.asText(this.homepageContent.seo_description)
+        }
+      ],
+      script: [
+        {
+          hid: "anim1",
+          src: "/animation/charming.min.js",
+          defer: true
+        },
+        {
+          hid: "anim4",
+          defer: true,
+          src: "/animation/TweenMax.min.js"
+        },
+        {
+          hid: "anim3",
+          defer: true,
+          src: "/animation/imagesloaded.pkgd.min.js"
+        },
+        {
+          hid: "anim2",
+          src: "/animation/animation.js",
+          defer: true
         }
       ]
     };

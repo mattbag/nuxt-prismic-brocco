@@ -62,11 +62,11 @@ import FooterPrismic from "~/components/FooterPrismic.vue";
 export default {
   components: {
     FooterPrismic
-  },
+  }
   // https://github.com/prismicio/nuxtjs-website/blob/master/layouts/homepage.vue
   //  Called before rendering the layout (even for error page)
-  async middleware({ store, $prismic }) {
-    await store.dispatch("getNav", $prismic);
-  }
+  // async middleware({ store, $prismic }) {
+  //   await store.dispatch("getNav", $prismic);
+  // }
 };
 </script>
