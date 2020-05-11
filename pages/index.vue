@@ -148,10 +148,19 @@
             <p class="subheading">get in touch</p>
             <ul>
               <li>
-                [email]
+                <a
+                  class="text-2xl"
+                  href="mailto:lou@russel.com"
+                  target="_blank"
+                >lou@russel.com</a>
               </li>
               <li>
-                [social]
+                <a
+                  class="text-2xl"
+                  href="facebook.com"
+                  target="_blank"
+                >facebook</a>
+
               </li>
             </ul>
           </div>

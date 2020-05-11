@@ -1,5 +1,5 @@
 <template>
-  <div class='post-part single max-w-lg mx-auto my-20'>
+  <div class='post-part single max-w-lg mx-auto my-20 px-4'>
     <prismic-rich-text
       class="textslice text-xl"
       :field="slice.primary.text"

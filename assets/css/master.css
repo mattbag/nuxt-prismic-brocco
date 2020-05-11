@@ -111,26 +111,28 @@ img {
 
 .page-enter:after,
 .page-leave-active:after {
-  /* transition: opacity 200ms, transform 1200ms; */
-  /* will-change: transform;
-  animation-duration: 500ms;
-  animation-fill-mode: both;
-  animation-name: zoom; */
-  animation-play-state: running;
+  transition: opacity 200ms;
+  will-change: opacity;
+  /* animation-duration: 500ms; */
+  /* animation-fill-mode: both; */
+  /* animation-name: zoom; */
+
+  /* animation-play-state: running; */
+  opacity: 1;
 }
 
 /* .page-leave-active {
   animation-direction: reverse;
 } */
-/* .page-enter {
+.page-enter {
   opacity: 0;
-  transform: translateY(60px);
+  /* transform: translateY(60px); */
 }
 
 .page-leave-to {
   opacity: 0;
-  transform: translateY(-60px);
-} */
+  /* transform: translateY(-60px); */
+}
 
 /* .home:after, */
 ._main:after {
@@ -232,6 +234,7 @@ svg:not(:root).svg-inline--fa {
   color: transparent;
   -webkit-text-stroke: 2px black;
 }
+
 .subheading {
   @apply .font-bold text-xl mb-8 tracking-widest uppercase;
   letter-spacing: 0.6em;

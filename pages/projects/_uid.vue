@@ -8,20 +8,23 @@
         v-if="pageContent.project_image_full"
         :field="pageContent.project_image_full"
       />
+      <div
+        v-else
+        class="py-32"
+      ></div>
       <div class="absolute w-full h-full top-0 flex items-center justify-center">
         <div class="text-center text-white">
           <h1
-            class="blog-title text-6xl mt-4 font-bold lowercase"
+            class="blog-title text-6xl my-4 font-bold lowercase"
             style="white-space:nowrap"
           >{{ $prismic.asText(pageContent.project_name) }}</h1>
 
-          <p>[sub]</p>
+          <p class="text-2xl">{{ $prismic.asText(pageContent.project_copy) }}</p>
         </div>
       </div>
     </div>
 
     <!-- Slice Block Componenet tag -->
-    <slices-block :slices="gallery" />
     <slices-block :slices="slices" />
     <!--  -->
     <div class="back py-12 text-center">
@@ -29,9 +32,7 @@
         exact
         to="/#work"
       >
-
         VIEW ALL
-
       </nuxt-link>
     </div>
   </main>
@@ -55,8 +56,7 @@ export default {
       // Returns data to be used in template
       return {
         pageContent: post,
-        slices: post.body1,
-        gallery: post.body
+        slices: post.body
         // formattedDate: Intl.DateTimeFormat("en-US", {
         //   year: "numeric",
         //   month: "short",

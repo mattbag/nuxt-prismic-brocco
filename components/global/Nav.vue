@@ -36,10 +36,12 @@
               class="js-menu-off text-stroke hover:text-black"
             >Work</nuxt-link>
           </li>
-          <li><a
-              href="#contact"
+          <li>
+            <nuxt-link
+              to="/#contact"
               class="js-menu-off text-stroke hover:text-black"
-            >Contact</a></li>
+            >Contact</nuxt-link>
+          </li>
         </ul>
       </nav>
     </div>
@@ -49,7 +51,6 @@
 <script>
 export default {
   mounted() {
-    console.log("====");
     window.initNav();
   }
 };
