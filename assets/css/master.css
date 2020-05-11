@@ -1,7 +1,8 @@
 @import "./tailwind.css";
 @import "./base.css";
+@import "./nav.css";
 
-:root {
+/* :root {
   --yellow: #ffcb08;
   --pink: #ed145a;
   --teal: #6cccde;
@@ -10,24 +11,14 @@
   --black: rgba(17, 17, 17, 0.9);
   --grey: #eeeff0;
   --body-bg: var(--dark);
-}
+} */
 
 .nuxt-link-active:not([class*="btn--"]),
 .nuxt-link-exact-active:not([class*="btn--"]),
 .text-shadow,
 ::selection {
   /* @apply text-pink; */
-  text-shadow: 2px 2px var(--teal);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.4;
-  font-weight: normal;
+  /* text-shadow: 2px 2px var(--teal); */
 }
 
 button,

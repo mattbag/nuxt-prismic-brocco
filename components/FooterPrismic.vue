@@ -1,15 +1,19 @@
 <template>
   <footer class="footer">
-    <a href="https://prismic.io" target="_blank" rel="noopener">
-      <img class="logo" src="../assets/img/prismic-logo.svg" alt="Prismic">
+    <a
+      href="https://mattbag.github.io"
+      target="_blank"
+      rel="noopener"
+    >
+      [made by Matt]
     </a>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'FooterPrismic'
-}
+  name: "FooterPrismic"
+};
 </script>
 
 <style lang="sass" scoped>

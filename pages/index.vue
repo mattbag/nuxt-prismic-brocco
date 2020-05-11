@@ -1,9 +1,9 @@
 <template>
   <main class="bubble home overflow-hidden">
 
-    <div class="min-h-screen flex items-center">
+    <div class="min-h-screen flex items-center py-8">
       <div class="max-w-6xl mx-auto w-full">
-        <div class="flex px-12 items-center">
+        <div class="flex px-12 items-center flex-wrap">
           <div class="md:w-1/2 md:pr-24">
             <h2 class="subheading">
               <strong>
@@ -35,7 +35,10 @@
       </div>
     </div>
 
-    <div class="hero js loadingOFF">
+    <div
+      class="hero js loadingOff"
+      id="work"
+    >
       <div
         class="content"
         id="projects_content"
@@ -122,9 +125,12 @@
     <!--  -->
     <!-- <div class="hero__screen"></div> -->
     <!--  -->
-    <div class="min-h-screen flex items-center">
+    <div
+      class="min-h-screen flex items-center"
+      id="contact"
+    >
       <div class="max-w-6xl mx-auto w-full">
-        <div class="flex px-12 items-center">
+        <div class="flex px-12 items-center flex-wrap">
           <div class="md:w-1/2 md:pr-24">
             <h2 class="text-6xl md:text-r5 leading-tight">
               <span class="text-stroke">
@@ -138,7 +144,7 @@
               </span>
             </h2>
           </div>
-          <div class="md:w-1/2">
+          <div class="md:w-1/2 py-8">
             <p class="subheading">get in touch</p>
             <ul>
               <li>
@@ -196,11 +202,11 @@ export default {
           src: "/animation/charming.min.js",
           defer: true
         },
-        {
-          hid: "anim4",
-          defer: true,
-          src: "/animation/TweenMax.min.js"
-        },
+        // {
+        //   hid: "anim4",
+        //   defer: true,
+        //   src: "/animation/TweenMax.min.js"
+        // },
         {
           hid: "anim3",
           defer: true,
