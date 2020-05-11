@@ -1,23 +1,96 @@
 <template>
   <main class="bubble home">
 
-    <header class="relative wrap rounded-xl overflow-hidden">
-      <ImageR
-        class="w-full"
-        :imageObj="homepageContent.hero_image"
-      ></ImageR>
-      <div class="title px-12">
-        <!-- <hr class="border-pink border w-20 mr-0 ml-auto"> -->
-        <!-- Template for page title -->
-        <h1 class="blog-title text-4xl mt-4 mb-12 uppercase text-right">
-          {{ $prismic.asText(homepageContent.heading_main) }}
-        </h1>
+    <div class="hero js loading">
+      <div
+        class="content"
+        id="projects_content"
+      >
+        <!-- {% for prj in collections.projects %} -->
+        <article
+          class="content__item"
+          v-for="(post) in posts"
+          :key="'full_'+post.id"
+        >
+          <div class="img-wrap img-wrap--content">
+            <div
+              class="img img--content"
+              :style="'background-image: url('+ post.data.project_image.url +');'"
+            ></div>
+          </div>
+          <header class="content__item-header">
+            <span class="content__item-header-meta">{{$prismic.asText(post.data.project_name)}}</span>
+            <h2 class="content__item-header-title">
+              <!-- {{ post.data.project_short }} -->
+              [short]
+            </h2>
+          </header>
+          <div class="content__item-copy">
+            <p class="content__item-copy-text">
+              <!-- {{ post.data.project_copy }} -->
+              [copy]
+            </p>
+            <nuxt-link
+              :to="'/projects/' + post.uid"
+              class="content__item-copy-more"
+            >more +</nuxt-link>
+          </div>
+        </article>
+
       </div>
-    </header>
+      <!-- end content -->
 
-    <div class="wrap">
-      <slices-block :slices="body" />
+      <div class="revealer">
+        <div class="revealer__inner"></div>
+      </div>
 
+      <!--  -->
+      <div
+        class="grid grid--slideshow"
+        id="projects"
+      >
+        <figure
+          class="grid__item grid__item--slide"
+          v-for="(post,i) in posts"
+          :key="'item_'+post.id"
+        >
+          <span class="number">0{{ i+1 }}</span>
+          <div class="img-wrap">
+            <div
+              class="img"
+              :style="'background-image: url('+ post.data.project_image.url +');'"
+            ></div>
+          </div>
+          <figcaption class="caption">{{$prismic.asText(post.data.project_name)}}</figcaption>
+        </figure>
+
+        <!--  -->
+        <div class="titles-wrap">
+          <div class="grid grid--titles">
+            <!-- {% for prj in collections.projects %} -->
+            <h3
+              class="grid__item grid__item--title"
+              v-for="(post) in posts"
+              :key="'title_'+post.id"
+            >
+              {{$prismic.asText(post.data.project_name)}}
+            </h3>
+            <!-- {% endfor %} -->
+          </div>
+        </div>
+
+        <div class="grid grid--interaction">
+          <div class="grid__item grid__item--cursor grid__item--left"></div>
+          <div class="grid__item grid__item--cursor grid__item--center"></div>
+          <div class="grid__item grid__item--cursor grid__item--right"></div>
+        </div>
+
+      </div>
+    </div>
+    <!--  -->
+    <div class="hero__screen"></div>
+    <!--  -->
+    <div class="body wrap bg-black">
       <section
         class="py-20 px-8 relative max-w-xl mx-auto"
         v-if="posts.length"
@@ -25,14 +98,21 @@
         <span
           class="text-vertical absolute left-0 text-xl"
           :class="{'text-3xl -ml-4':posts.length>2}"
-        >{{posts_heading}}</span>
+        >{{"posts_heading"}}</span>
         <!-- Here :post="post" passes the data to the component -->
         <div class="max-w-sm mx-auto">
-          <blog-widget
-            v-for="post in posts"
+          <div
+            v-for="(post,i) in posts"
             :key="post.id"
-            :post="post"
-          ></blog-widget>
+          >
+            <span>{{i++}}</span>
+            <span>{{$prismic.asText(post.data.project_name)}}</span>
+            <div
+              class="img img--content"
+              :style="'background-image: url('+ post.data.project_image.url +');'"
+            ></div>
+            <!-- <pre>{{post}}</pre> -->
+          </div>
         </div>
         <p class="text-right">
           <nuxt-link to="/blog">
@@ -43,6 +123,8 @@
         </p>
       </section>
     </div>
+
+    <slices-block :slices="body" />
   </main>
 </template>
 
@@ -50,12 +132,17 @@
 //Importing all the slices components
 import SlicesBlock from "~/components/SlicesBlock.vue";
 import BlogWidget from "~/components/BlogWidget.vue";
-
+// import { initLayout } from "./../animation/animation";
 export default {
   name: "Home",
+  layout: "animated",
   components: {
     SlicesBlock,
     BlogWidget
+  },
+  mounted() {
+    // window.initLayout();
+    setTimeout(window.initLayout, 1000);
   },
   head() {
     return {
@@ -78,41 +165,30 @@ export default {
       // Query to get homepage content
       const homepageContent = (await $prismic.api.getSingle("homepage")).data;
       // articles_to_link
-      let postsFeatured = await homepageContent.main_body.find(
-        item => item.slice_type == "list_of_articles"
-      );
+      // let postsFeatured = await homepageContent.main_body.find(
+      //   item => item.slice_type == "list_of_articles"
+      // );
       // console.log("====");
       // console.log($prismic.asText(postsFeatured.primary.title_of_section));
       // console.log("====");
 
       let posts = [];
-      // if (postsFeatured) {
-      //   // Query to get posts content to preview
-      //   const blogPosts = await $prismic.api.query(
-      //     $prismic.predicates.at("document.type", "post"),
-      //     {
-      //       orderings: "[my.post.date desc]"
-      //     }
-      //   );
-      //   posts = await blogPosts.results.filter(p => {
-      //     // console.log("====");
-      //     // console.log(p);
-      //     // console.log("====");
-      //     return postsFeatured.items.find(po => {
-      //       // console.log("====");
-      //       // console.log(po.articles_to_link.uid);
-      //       // console.log("====");
-      //       return po.articles_to_link.uid === p.uid;
-      //     });
-      //   });
-      // }
+
+      // Query to get posts content to preview
+      const blogPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "project"),
+        {
+          orderings: "[my.post.date desc]"
+        }
+      );
+
       // Returns data to be used in template
       return {
         homepageContent,
-        body: homepageContent.body
+        body: homepageContent.body,
         // featured: homepageContent.body1,
         // posts_heading: $prismic.asText(postsFeatured.primary.title_of_section),
-        // posts
+        posts: blogPosts.results
       };
     } catch (e) {
       console.log("====");
