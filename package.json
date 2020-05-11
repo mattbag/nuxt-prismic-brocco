@@ -12,21 +12,21 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@nuxtjs/prismic": "^1.1.1",
+    "@nuxtjs/prismic": "^1.2.1",
     "cookies": "^0.8.0",
     "cross-env": "^7.0.2",
-    "nuxt": "^2.12.0",
-    "prismic-javascript": "^2.7.0",
-    "prismic-vue": "^2.0.0"
+    "nuxt": "^2.12.2",
+    "prismic-javascript": "^2.7.1",
+    "prismic-vue": "^2.0.1"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.3",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.42.0",
+    "webpack": "^4.43.0",
     "@nuxtjs/global-components": "^0.6.1",
-    "@nuxtjs/tailwindcss": "^1.4.0",
-    "autoprefixer": "^9.7.4",
-    "tailwindcss": "~1.2.0"
+    "@nuxtjs/tailwindcss": "^2.0.0",
+    "autoprefixer": "^9.7.6",
+    "tailwindcss": "~1.4.6"
   }
 }
