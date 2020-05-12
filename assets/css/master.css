@@ -108,7 +108,7 @@ img {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 500ms;
+  transition: opacity 700ms 200ms;
 }
 
 .page-enter,
