@@ -8,7 +8,7 @@ export default {
     // title: "Prismic + Nuxt Blog example",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" }
       // {
       //   hid: "description",
       //   name: "description",
@@ -16,7 +16,7 @@ export default {
       // }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" }
       // {
       //   rel: "stylesheet",
       //   href: "https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
@@ -26,14 +26,14 @@ export default {
       {
         hid: "anim4",
         defer: true,
-        src: "/animation/TweenMax.min.js",
+        src: "/animation/TweenMax.min.js"
       },
       {
         hid: "nav1",
         defer: true,
-        src: "/animation/nav.js",
-      },
-    ],
+        src: "/animation/nav.js"
+      }
+    ]
   },
 
   /*
@@ -59,23 +59,23 @@ export default {
     "@/modules/static",
     "@/modules/crawler",
     // https://prismic-nuxt.js.org/
-    "@nuxtjs/prismic",
+    "@nuxtjs/prismic"
   ],
 
   buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/global-components"],
   tailwindcss: {
     // configPath: '~/config/tailwind.config.js',
-    cssPath: "~/assets/css/master.css",
+    cssPath: "~/assets/css/master.css"
   },
   purgeCSS: {
-    whitelist: [/^html/, /^page-/, /^xl/, /^lg/, /^md/, /^sm/, /^w-/, /^rte/],
+    whitelist: [/^html/, /^page-/, /^xl/, /^lg/, /^md/, /^sm/, /^w-/, /^rte/]
   },
 
   prismic: {
     endpoint: "https://broccolou.cdn.prismic.io/api/v2",
     linkResolver: "@/plugins/link-resolver",
     htmlSerializer: "@/plugins/html-serializer",
-    preview: "/preview",
+    preview: "/preview"
   },
 
   /*
@@ -87,10 +87,10 @@ export default {
      */
     extend(config, ctx) {
       config.resolve.alias["vue"] = "vue/dist/vue.common";
-    },
+    }
   },
 
   generate: {
-    fallback: "404.html", // Netlify reads a 404.html, Nuxt will load as an SPA
-  },
+    fallback: "404.html" // Netlify reads a 404.html, Nuxt will load as an SPA
+  }
 };

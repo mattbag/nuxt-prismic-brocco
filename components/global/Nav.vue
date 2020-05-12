@@ -15,10 +15,15 @@
             </i>
           </nuxt-link>
         </li>
-        <li> <button
+        <li>
+          <button
             id="hamburger"
             class="bg-white p-1 off js-slide-close"
-          >menu</button></li>
+          >
+            <Burger />
+            <!-- menu -->
+          </button>
+        </li>
       </ul>
     </nav>
     <div class="menudrop bg-pink">
@@ -49,7 +54,9 @@
 </template>
 
 <script>
+import Burger from "./Burger";
 export default {
+  components: { Burger },
   mounted() {
     window.initNav();
   }
