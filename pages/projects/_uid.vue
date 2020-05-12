@@ -15,10 +15,11 @@
       ></div>
       <div class="absolute w-full h-full top-0 flex items-center justify-center">
         <div class="text-center text-white">
-          <h1
-            class="blog-title text-6xl my-4 font-bold lowercase"
-            style="white-space:nowrap"
-          >{{ $prismic.asText(pageContent.project_name) }}</h1>
+          <h1 class="blog-title text-6xl my-4 lowercase tracking-wider">
+            <strong>
+              {{ $prismic.asText(pageContent.project_name) }}
+            </strong>
+          </h1>
 
           <p class="text-2xl">{{ $prismic.asText(pageContent.project_copy) }}</p>
         </div>

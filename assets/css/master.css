@@ -2,23 +2,20 @@
 @import "./base.css";
 @import "./nav.css";
 
-/* :root {
-  --yellow: #ffcb08;
-  --pink: #ed145a;
-  --teal: #6cccde;
-  --navy: #283593;
-  --dark: #0f1522;
-  --black: rgba(17, 17, 17, 0.9);
-  --grey: #eeeff0;
-  --body-bg: var(--dark);
-} */
+@font-face {
+  font-family: "nhass-light";
+  src: url("../fonts/NHaasGroteskDSStd-45Lt.otf");
+  font-display: block;
+}
 
-.nuxt-link-active:not([class*="btn--"]),
-.nuxt-link-exact-active:not([class*="btn--"]),
-.text-shadow,
-::selection {
-  /* @apply text-pink; */
-  /* text-shadow: 2px 2px var(--teal); */
+@font-face {
+  font-family: "nhass";
+  src: url("../fonts/NHaasGroteskDSStd-75Bd.otf");
+  font-display: block;
+}
+
+body {
+  font-family: "nhass-light", sans-serif;
 }
 
 button,

@@ -54,7 +54,8 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: "nhass", sans-serif;
 }
 
 dfn {
@@ -238,6 +239,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 .dark-mode {
@@ -807,9 +809,9 @@ a:focus {
   }
 }
 
-.body {
+/* .body {
   background: var(--color-bg);
   position: relative;
   min-height: 100vh;
   padding: 2rem;
-}
+} */

@@ -37,10 +37,10 @@
             >Work</nuxt-link>
           </li>
           <li>
-            <nuxt-link
-              to="/#contact"
+            <a
+              href="#contact"
               class="js-menu-off text-stroke hover:text-black"
-            >Contact</nuxt-link>
+            >Contact</a>
           </li>
         </ul>
       </nav>
