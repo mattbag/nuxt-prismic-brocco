@@ -435,12 +435,12 @@ a:focus {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
-.revealer.content-open {
+/* .revealer.content-open {
   visibility: visible;
-}
+} */
 
 .revealer__inner {
   background-color: var(--color-reveal-bg);

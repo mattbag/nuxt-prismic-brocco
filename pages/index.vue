@@ -148,17 +148,17 @@ export default {
     // BlogWidget
   },
   mounted() {
-    // setTimeout(window.animationSetup, 500);
-    if (!window.atlas_setup) {
-      // console.log("====");
-      // console.log(window.atlas_setup);
-      // console.log("====");
-      setTimeout(window.animationSetup, 500);
+    setTimeout(window.animationSetup, 500);
+    // if (!window.atlas_setup) {
+    //   // console.log("====");
+    //   // console.log(window.atlas_setup);
+    //   // console.log("====");
+    //   setTimeout(window.animationSetup, 500);
 
-      window.atlas_setup = true;
-    } else {
-      window.initLayout();
-    }
+    //   window.atlas_setup = true;
+    // } else {
+    //   window.initLayout();
+    // }
   },
   head() {
     return {

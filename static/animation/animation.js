@@ -619,9 +619,9 @@ window.animationSetup = function(params) {
       this.DOM.projects.classList[action === "open" ? "add" : "remove"](
         "content-open"
       );
-      this.DOM.revealer.classList[action === "open" ? "add" : "remove"](
-        "content-open"
-      );
+      // this.DOM.revealer.classList[action === "open" ? "add" : "remove"](
+      //   "content-open"
+      // );
 
       const movingSlides = [this.centerSlide, this.rightSlide, this.leftSlide];
       let promises = [];

@@ -54,8 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-
+    <div class="footer py-6">
       <span>
         [&nbsp;&nbsp;&nbsp;
         <a
@@ -63,7 +62,7 @@
           target="_blank"
           rel="noopener"
           style="font-family: monospace, sans-serif"
-        >made by Matt
+        >dev by Matt
         </a>
         &nbsp;]
       </span>
@@ -79,7 +78,6 @@ export default {
 
 <style lang="sass" scoped>
 .footer
-  padding: 40px 0
   max-width: 700px
   margin: 0 auto
   text-align: center

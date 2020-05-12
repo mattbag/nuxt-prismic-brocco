@@ -35,5 +35,6 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [],
+  purge: ["./src/**/*.html", "./src/**/*.vue"]
 };
