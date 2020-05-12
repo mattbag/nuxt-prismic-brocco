@@ -18,7 +18,7 @@
         <li>
           <button
             id="hamburger"
-            class="bg-whiteOFF p-1 off js-slide-close"
+            class="bg-white-t p-1 off js-slide-close"
           >
             <Burger />
             <!-- menu -->

@@ -10,6 +10,7 @@ module.exports = {
       black: "#111",
       dark: "#0f1522",
       white: "#fff",
+      "white-t": "#ffffff80",
       // yellow: "#ffcb08",
       // green: "#9AE6B4",
       pink: "#e5495f"
