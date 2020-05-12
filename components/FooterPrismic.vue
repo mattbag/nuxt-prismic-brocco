@@ -1,5 +1,4 @@
 <template>
-
   <footer
     class="relative z-1"
     id="contact"

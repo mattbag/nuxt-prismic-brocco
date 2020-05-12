@@ -634,12 +634,12 @@ window.animationSetup = function(params) {
       );
 
       if (action === "open") {
-        document.body.classList.add("overflow-hidden");
+        // document.body.classList.add("overflow-hidden");
         contentItem.classList.add("content__item--current");
       }
       Promise.all(promises).then(() => {
         if (action === "close") {
-          document.body.classList.remove("overflow-hidden");
+          // document.body.classList.remove("overflow-hidden");
           contentItem.classList.remove("content__item--current");
         }
         this.isAnimating = false;
