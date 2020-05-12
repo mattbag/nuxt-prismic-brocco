@@ -144,15 +144,16 @@ export default {
     // BlogWidget
   },
   mounted() {
-    // window.initLayout();
-    if (!window.atlas_setup) {
-      // console.log("====");
-      // console.log(window.atlas_setup);
-      // console.log("====");
+    setTimeout(window.animationSetup, 0);
+    // if (!window.atlas_setup) {
+    //   // console.log("====");
+    //   // console.log(window.atlas_setup);
+    //   // console.log("====");
 
-      window.atlas_setup = true;
-      setTimeout(window.animationSetup, 1000);
-    }
+    //   window.atlas_setup = true;
+    // } else {
+    //   window.initLayout();
+    // }
   },
   head() {
     return {

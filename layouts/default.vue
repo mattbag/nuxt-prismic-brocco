@@ -1,11 +1,7 @@
 <template>
   <div>
-
     <Nav />
-    <!-- <pre class="text-white">
-      {{$store.state.nav}}
-    </pre> -->
-    <nuxt keep-alive />
+    <nuxt />
     <footer-prismic />
   </div>
 
