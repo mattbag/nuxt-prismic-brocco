@@ -73,7 +73,7 @@ export default {
       if ($item) {
         setTimeout(_ => {
           this.scroller($item.offsetTop);
-        }, 500);
+        }, 800);
       } else {
         if (route) {
           this.$router.push(route, function() {

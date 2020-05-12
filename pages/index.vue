@@ -148,15 +148,6 @@ export default {
     // BlogWidget
   },
   mounted() {
-    console.log("====");
-    console.log("mounted");
-    console.log("====");
-    if (location.hash) {
-      console.log("====");
-      console.log(location.hash);
-      console.log("====");
-    }
-
     // setTimeout(window.animationSetup, 500);
     if (!window.atlas_setup) {
       // console.log("====");
