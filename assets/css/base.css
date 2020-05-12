@@ -387,7 +387,7 @@ a:focus {
 .js .content__item--current {
   opacity: 1;
   pointer-events: auto;
-  top: 16rem;
+  top: 10rem;
 }
 
 .content__item-header {

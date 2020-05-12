@@ -619,6 +619,11 @@ window.animationSetup = function(params) {
       this.DOM.projects.classList[action === "open" ? "add" : "remove"](
         "content-open"
       );
+      window.scroll({
+        top: window.innerHeight,
+        left: 0,
+        behavior: "smooth"
+      });
       // this.DOM.revealer.classList[action === "open" ? "add" : "remove"](
       //   "content-open"
       // );
