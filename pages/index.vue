@@ -1,6 +1,6 @@
 <template>
   <main
-    class="bubble home overflow-hidden"
+    class="bubble home"
     id="home"
   >
     <div class="min-h-screen flex items-center py-8 relative z-1">
@@ -38,7 +38,7 @@
     </div>
 
     <div
-      class="hero js loading"
+      class="overflow-hidden hero js loading"
       id="work"
     >
       <div
