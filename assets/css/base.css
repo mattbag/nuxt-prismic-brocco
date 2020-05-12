@@ -54,8 +54,8 @@ abbr[title] {
 
 b,
 strong {
-  /* font-weight: bold; */
-  font-family: "nhass", sans-serif;
+  font-weight: 700;
+  /* font-family: "nhass", sans-serif; */
 }
 
 dfn {
@@ -236,8 +236,8 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   font-family: transat-text, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
