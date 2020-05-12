@@ -13,7 +13,7 @@ module.exports = {
       "white-t": "#ffffff80",
       // yellow: "#ffcb08",
       // green: "#9AE6B4",
-      pink: "#e5495f"
+      pink: "#EC1559"
       // teal: "#6cccde"
     },
     extend: {
@@ -23,7 +23,7 @@ module.exports = {
       },
       fontSize: {
         r5: "5rem",
-        r6: "6rem"
+        r6: "6.5rem"
       },
       borderRadius: {
         xl: "1.2rem"

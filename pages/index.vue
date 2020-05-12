@@ -20,7 +20,7 @@
               England.</p>
           </div>
           <div class="md:w-1/2">
-            <h1 class="text-6xl md:text-r5 leading-tight">
+            <h1 class="text-6xl md:text-r6 leading-tight">
               <span class="text-stroke">
                 UX / UI
                 DESIGNER
@@ -71,7 +71,7 @@
             <nuxt-link
               :to="'/projects/' + post.uid"
               class="content__item-copy-more js-slide-close"
-            >more +</nuxt-link>
+            >Explore project</nuxt-link>
           </div>
         </article>
 

@@ -5,7 +5,7 @@
         <li>
           <nuxt-link
             to="/"
-            class="text-xl bg-white p-1"
+            class="text-xl text-pink bg-whiteOFF p-1"
           >
             <i>
               <strong>
@@ -18,7 +18,7 @@
         <li>
           <button
             id="hamburger"
-            class="bg-white-t p-1 off js-slide-close"
+            class="bg-white-tOFF text-pink p-1 off js-slide-close focus:outline-none"
           >
             <Burger />
             <!-- menu -->
@@ -26,31 +26,32 @@
         </li>
       </ul>
     </nav>
-    <div class="menudrop bg-pink">
+    <div class="menudrop bg-black">
       <nav class="menudrop__nav uppercase">
         <ul>
           <li>
             <nuxt-link
-              class="js-menu-off text-stroke hover:text-black"
+              class="js-menu-off text-stroke-w hover:text-white text-r6"
               :to="{ path: '/',hash:'#home'}"
-            >Home</nuxt-link>
+            >
+              <strong>home</strong></nuxt-link>
           </li>
           <li>
             <nuxt-link
               :to="{ path: '/',hash:'#work'}"
-              class="js-menu-off text-stroke hover:text-black"
-            >Work</nuxt-link>
+              class="js-menu-off text-stroke-w hover:text-white text-r6"
+            ><strong>Work</strong></nuxt-link>
           </li>
           <!-- <li>
             <a
               href="#contact"
-              class="js-menu-off text-stroke hover:text-black"
+              class="js-menu-off text-stroke-w hover:text-white text-r6"
             >Contact</a>
           </li> -->
           <li>
             <nuxt-link
               :to="{ path: '',hash:'#contact'}"
-              class="js-menu-off text-stroke hover:text-black"
+              class="js-menu-off text-stroke-w hover:text-white text-r6"
             >Contact</nuxt-link>
           </li>
         </ul>

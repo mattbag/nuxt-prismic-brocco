@@ -15,7 +15,7 @@
       ></div>
       <div class="absolute w-full h-full top-0 flex items-center justify-center">
         <div class="text-center text-white">
-          <h1 class="blog-title text-6xl my-4 lowercase tracking-wider">
+          <h1 class="blog-title text-6xl my-4 tracking-wider">
             <strong>
               {{ $prismic.asText(pageContent.project_name) }}
             </strong>

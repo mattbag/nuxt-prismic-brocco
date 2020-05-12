@@ -25,6 +25,7 @@ p {
 button,
 a {
   /* @apply text-navy; */
+  font-family: "nhass-light", sans-serif;
   @apply no-underline;
   color: inherit;
   /* cursor: url(/img/curs_hover.svg), pointer; */

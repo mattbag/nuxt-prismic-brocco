@@ -54,8 +54,8 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: 700;
-  /* font-family: "nhass", sans-serif; */
+  /* font-weight: 700; */
+  font-family: "nhass", sans-serif;
 }
 
 dfn {
