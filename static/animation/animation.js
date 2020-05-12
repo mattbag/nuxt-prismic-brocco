@@ -634,8 +634,8 @@ window.animationSetup = function(params) {
       );
 
       if (action === "open") {
-        contentItem.classList.add("content__item--current");
         document.body.classList.add("overflow-hidden");
+        contentItem.classList.add("content__item--current");
       }
       Promise.all(promises).then(() => {
         if (action === "close") {

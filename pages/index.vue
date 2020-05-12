@@ -137,31 +137,37 @@
 
 <script>
 //Importing all the slices components
-import SlicesBlock from "~/components/SlicesBlock.vue";
+// import SlicesBlock from "~/components/SlicesBlock.vue";
 // import BlogWidget from "~/components/BlogWidget.vue";
 // import { initLayout } from "./../animation/animation";
 export default {
   name: "Home",
-  // layout: "animated",
+  // layout: "home_only",
   components: {
     // SlicesBlock,
     // BlogWidget
   },
   mounted() {
-    // console.log("====");
-    // console.log("mounted");
-    // console.log("====");
+    console.log("====");
+    console.log("mounted");
+    console.log("====");
+    if (location.hash) {
+      console.log("====");
+      console.log(location.hash);
+      console.log("====");
+    }
 
-    setTimeout(window.animationSetup, 0);
-    // if (!window.atlas_setup) {
-    //   // console.log("====");
-    //   // console.log(window.atlas_setup);
-    //   // console.log("====");
+    // setTimeout(window.animationSetup, 500);
+    if (!window.atlas_setup) {
+      // console.log("====");
+      // console.log(window.atlas_setup);
+      // console.log("====");
+      setTimeout(window.animationSetup, 500);
 
-    //   window.atlas_setup = true;
-    // } else {
-    //   window.initLayout();
-    // }
+      window.atlas_setup = true;
+    } else {
+      window.initLayout();
+    }
   },
   head() {
     return {

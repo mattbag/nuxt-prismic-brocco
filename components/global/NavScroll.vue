@@ -18,7 +18,7 @@
         <li>
           <button
             id="hamburger"
-            class="bg-white-tOFF text-pink p-1 off js-slide-close focus:out"
+            class="bg-white-tOFF text-pink p-1 off js-slide-close focus:outline-none"
           >
             <Burger />
             <!-- menu -->
@@ -30,29 +30,23 @@
       <nav class="menudrop__nav uppercase">
         <ul>
           <li>
-            <nuxt-link
-              class="js-menu-off font-bold font-sans text-stroke-w hover:text-white text-r6"
-              :to="{ path: '/',hash:'#home'}"
+            <a
+              class="js-menu-offo text-stroke-w hover:text-white text-r6"
+              href="/#home"
             >
-              home</nuxt-link>
+              <strong>home</strong></a>
           </li>
           <li>
-            <nuxt-link
-              :to="{ path: '/',hash:'#work'}"
-              class="js-menu-off font-bold font-sans text-stroke-w hover:text-white text-r6"
-            >Work</nuxt-link>
-          </li>
-          <!-- <li>
             <a
-              href="#contact"
+              href="/#work"
+              class="js-menu-off text-stroke-w hover:text-white text-r6"
+            ><strong>Work</strong></a>
+          </li>
+          <li>
+            <a
+              href="/#contact"
               class="js-menu-off text-stroke-w hover:text-white text-r6"
             >Contact</a>
-          </li> -->
-          <li>
-            <nuxt-link
-              :to="{ path: '',hash:'#contact'}"
-              class="js-menu-off text-stroke-w hover:text-white text-r6"
-            >Contact</nuxt-link>
           </li>
         </ul>
       </nav>

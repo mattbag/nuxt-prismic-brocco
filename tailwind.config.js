@@ -6,6 +6,10 @@
  */
 module.exports = {
   theme: {
+    fontFamily: {
+      sans: ["DM Sans", "sans-serif"],
+      light: ["nhass-light", "sans-serif"]
+    },
     colors: {
       black: "#111",
       dark: "#0f1522",

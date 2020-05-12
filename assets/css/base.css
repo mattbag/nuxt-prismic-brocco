@@ -279,7 +279,7 @@ body {
   pointer-events: none;
   border-radius: 50%;
   opacity: 0.4;
-  background: var(--color-link);
+  background: #000;
   animation: loaderAnim 0.7s linear infinite alternate forwards;
 }
 
@@ -379,6 +379,7 @@ a:focus {
 }
 
 .js .content__item {
+  transition: opacity 200ms;
   opacity: 0;
   pointer-events: none;
 }
@@ -639,9 +640,9 @@ a:focus {
 }
 
 @media screen and (min-width: 53em) {
-  body {
-    /* overflow: hidden; */
-  }
+  /* body {
+    overflow: hidden;
+  } */
 
   .frame {
     position: fixed;
