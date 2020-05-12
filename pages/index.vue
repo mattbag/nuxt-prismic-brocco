@@ -3,8 +3,7 @@
     class="bubble home overflow-hidden"
     id="home"
   >
-
-    <div class="min-h-screen flex items-center py-8">
+    <div class="min-h-screen flex items-center py-8 relative z-1">
       <div class="max-w-6xl mx-auto w-full">
         <div class="flex px-12 items-center flex-wrap">
           <div class="md:w-1/2 md:pr-24">
@@ -174,22 +173,26 @@ export default {
         {
           hid: "anim1",
           src: "/animation/charming.min.js",
-          defer: true
+          defer: true,
+          async: true
         },
         // {
         //   hid: "anim4",
-        //   defer: true,
+        //   defer: true,,
+        // async:true
         //   src: "/animation/TweenMax.min.js"
         // },
         {
           hid: "anim3",
+          src: "/animation/imagesloaded.pkgd.min.js",
           defer: true,
-          src: "/animation/imagesloaded.pkgd.min.js"
+          async: true
         },
         {
           hid: "anim2",
           src: "/animation/animation.js",
-          defer: true
+          defer: true,
+          async: true
         }
       ]
     };

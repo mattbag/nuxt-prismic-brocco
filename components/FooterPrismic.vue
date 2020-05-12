@@ -1,6 +1,6 @@
 <template>
 
-  <footer>
+  <footer class="relative z-1">
     <div
       class="min-h-screen flex items-center"
       id="contact"

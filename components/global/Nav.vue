@@ -26,7 +26,7 @@
         </li>
       </ul>
     </nav>
-    <div class="menudrop bg-black">
+    <div class="menudrop bg-black relative z-2">
       <nav class="menudrop__nav">
         <ul>
           <li>
