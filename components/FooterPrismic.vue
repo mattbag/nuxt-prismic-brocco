@@ -1,10 +1,10 @@
 <template>
 
-  <footer class="relative z-1">
-    <div
-      class="min-h-screen flex items-center"
-      id="contact"
-    >
+  <footer
+    class="relative z-1"
+    id="contact"
+  >
+    <div class="min-h-screen flex items-center">
       <div class="max-w-6xl mx-auto w-full">
         <div class="flex px-12 items-center flex-wrap">
           <div class="md:w-1/2 md:pr-24">
