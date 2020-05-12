@@ -1,5 +1,8 @@
 <template>
-  <main class="bubble home overflow-hidden">
+  <main
+    class="bubble home overflow-hidden"
+    id="home"
+  >
 
     <div class="min-h-screen flex items-center py-8">
       <div class="max-w-6xl mx-auto w-full">
@@ -89,7 +92,7 @@
           v-for="(post,i) in posts"
           :key="'item_'+post.id"
         >
-          <span class="number">0{{ i+1 }}</span>
+          <span class="number text-stroke">0{{ i+1 }}</span>
           <div class="img-wrap">
             <div
               class="img"
@@ -108,7 +111,8 @@
               v-for="(post) in posts"
               :key="'title_'+post.id"
             >
-              {{$prismic.asText(post.data.project_name)}}
+              <!-- {{$prismic.asText(post.data.project_name)}} -->
+              {{$prismic.asText(post.data.project_short)}}
             </h3>
             <!-- {% endfor %} -->
           </div>
@@ -144,6 +148,10 @@ export default {
     // BlogWidget
   },
   mounted() {
+    // console.log("====");
+    // console.log("mounted");
+    // console.log("====");
+
     setTimeout(window.animationSetup, 0);
     // if (!window.atlas_setup) {
     //   // console.log("====");

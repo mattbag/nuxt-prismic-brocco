@@ -93,4 +93,40 @@ export default {
   generate: {
     fallback: "404.html" // Netlify reads a 404.html, Nuxt will load as an SPA
   }
+  // router: {
+  //   scrollBehavior: async function(to, from, savedPosition) {
+  //     console.log("====");
+  //     console.log("scroll", to, from);
+  //     console.log("====");
+
+  //     if (savedPosition) {
+  //       return savedPosition;
+  //     }
+
+  //     const findEl = async (hash, x = 0) => {
+  //       return (
+  //         document.querySelector(hash) ||
+  //         new Promise(resolve => {
+  //           if (x > 50) {
+  //             return resolve(document.querySelector("#__nuxt"));
+  //           }
+  //           setTimeout(() => {
+  //             resolve(findEl(hash, ++x || 1));
+  //           }, 100);
+  //         })
+  //       );
+  //     };
+
+  //     let el = await findEl(to.hash);
+  //     if (to.hash && el) {
+  //       if ("scrollBehavior" in document.documentElement.style) {
+  //         return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
+  //       } else {
+  //         return window.scrollTo(0, el.offsetTop);
+  //       }
+  //     }
+
+  //     return { x: 0, y: 0 };
+  //   }
+  // }
 };

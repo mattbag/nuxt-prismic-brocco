@@ -13,9 +13,9 @@
  * http://www.codrops.com
  */
 window.animationSetup = function(params) {
-  console.log("====");
-  console.log("animationSetup");
-  console.log("====");
+  // console.log("====");
+  // console.log("animationSetup");
+  // console.log("====");
 
   const MathUtils = {
     lineEq: (y2, y1, x2, x1, currentVal) => {
@@ -664,9 +664,9 @@ window.animationSetup = function(params) {
   const revealer = new Revealer(document.querySelector(".revealer__inner"));
 
   function initLayout(params) {
-    console.log("====");
-    console.log("initLayout");
-    console.log("====");
+    // console.log("====");
+    // console.log("initLayout");
+    // console.log("====");
 
     // Revealer element
     // Initialize the slideshow

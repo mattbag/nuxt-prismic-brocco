@@ -32,20 +32,26 @@
           <li>
             <nuxt-link
               class="js-menu-off text-stroke hover:text-black"
-              to="/"
+              :to="{ path: '/',hash:'#home'}"
             >Home</nuxt-link>
           </li>
           <li>
             <nuxt-link
-              to="/#work"
+              :to="{ path: '/',hash:'#work'}"
               class="js-menu-off text-stroke hover:text-black"
             >Work</nuxt-link>
           </li>
-          <li>
+          <!-- <li>
             <a
               href="#contact"
               class="js-menu-off text-stroke hover:text-black"
             >Contact</a>
+          </li> -->
+          <li>
+            <nuxt-link
+              :to="{ path: '',hash:'#contact'}"
+              class="js-menu-off text-stroke hover:text-black"
+            >Contact</nuxt-link>
           </li>
         </ul>
       </nav>

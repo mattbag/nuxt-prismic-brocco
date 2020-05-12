@@ -26,9 +26,9 @@
               <li>
                 <a
                   class="text-2xl"
-                  href="mailto:lou@russel.com"
+                  href="mailto:louis-thomas@hotmail.co.uk"
                   target="_blank"
-                >lou@russel.com</a>
+                >louis-thomas@hotmail.co.uk</a>
               </li>
               <li>
                 <a
