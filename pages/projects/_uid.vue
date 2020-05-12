@@ -33,7 +33,7 @@
         <nuxt-link
           class="text-stroke-w text-r6 uppercase"
           v-if="prevNext.prev"
-          :to="prevNext.prev.slugs[prevNext.prev.slugs.length-1]"
+          :to="prevNext.prev.uid"
         >
           pre
         </nuxt-link>
@@ -50,7 +50,7 @@
         <nuxt-link
           class="text-stroke-w text-r6 uppercase"
           v-if="prevNext.next"
-          :to="prevNext.next.slugs[prevNext.next.slugs.length-1]"
+          :to="prevNext.next.uid"
         >
           nxt
         </nuxt-link>

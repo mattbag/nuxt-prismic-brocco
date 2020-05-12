@@ -192,7 +192,7 @@ export default {
       // console.log("====");
 
       window.atlas_setup = true;
-      setTimeout(window.animationSetup, 0);
+      setTimeout(window.animationSetup, 1000);
     }
   },
   head() {
