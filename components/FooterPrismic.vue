@@ -13,11 +13,9 @@
                 PLEASE <br> SAY
               </span>
               <br>
-              <span>
-                <strong>
-                  HI.
-                </strong>
-              </span>
+              <strong>
+                HI.
+              </strong>
             </h2>
           </div>
           <div class="md:w-1/2 py-8">
@@ -38,14 +36,14 @@
               <li>
                 <a
                   class="text-lg"
-                  href="facebook.com"
+                  href="https://facebook.com"
                   target="_blank"
                 >linkedin</a>
               </li>
               <li>
                 <a
                   class="text-lg"
-                  href="facebook.com"
+                  href="https://facebook.com"
                   target="_blank"
                 >twitter</a>
               </li>

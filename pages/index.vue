@@ -42,7 +42,7 @@
       id="work"
     >
       <div
-        class="content"
+        class="z-2 content"
         id="projects_content"
       >
         <!-- {% for prj in collections.projects %} -->
