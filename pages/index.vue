@@ -69,7 +69,7 @@
             </p>
             <nuxt-link
               :to="'/projects/' + post.uid"
-              class="content__item-copy-more js-slide-close"
+              class="content__item-copy-more js-slide-close underline"
             >Explore project</nuxt-link>
           </div>
         </article>

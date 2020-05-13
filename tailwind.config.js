@@ -27,7 +27,7 @@ module.exports = {
       },
       fontSize: {
         r5: "5rem",
-        r6: "6.5rem"
+        r6: "6rem"
       },
       borderRadius: {
         xl: "1.2rem"

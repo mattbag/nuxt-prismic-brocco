@@ -13,9 +13,9 @@
         v-else
         class="py-32"
       ></div>
-      <div class="absolute w-full h-full top-0 flex items-center justify-center">
+      <div class="lg:absolute w-full h-full top-0 flex items-center justify-center">
         <div class="text-center text-white">
-          <h1 class="blog-title text-6xl my-4 tracking-wider">
+          <h1 class="blog-title text-4xl md:text-6xl my-4 tracking-wider">
             <strong>
               {{ $prismic.asText(pageContent.project_name) }}
             </strong>
@@ -29,10 +29,10 @@
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices" />
     <!--  -->
-    <div class="back py-12 text-center flex flex-wrap items-center justify-between px-8">
+    <div class="back py-12 text-center flex flex-wrap items-center justify-between px-2 md:px-8">
       <div class="flex-grow">
         <nuxt-link
-          class="text-stroke-w text-r6 uppercase"
+          class="text-stroke-w text-6xl md:text-r6 uppercase"
           v-if="prevNext.prev"
           :to="prevNext.prev.uid"
         >
@@ -49,7 +49,7 @@
       </div>
       <div class="flex-grow">
         <nuxt-link
-          class="text-stroke-w text-r6 uppercase"
+          class="text-stroke-w text-6xl md:text-r6 uppercase"
           v-if="prevNext.next"
           :to="prevNext.next.uid"
         >
