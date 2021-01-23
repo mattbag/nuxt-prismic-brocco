@@ -1,79 +1,67 @@
 <template>
-  <main
-    class="bubble home"
-    id="home"
-  >
+  <main class="bubble home" id="home">
     <div class="min-h-screen flex items-center py-8 relative z-1">
       <div class="max-w-6xl mx-auto w-full">
         <div class="flex px-12 items-center flex-wrap">
-          <div class="md:w-1/2 md:pr-24">
-            <h2 class="subheading">
-              <strong>
-                WELCOME
-              </strong>
-            </h2>
-
-            <p class="text-lg leading-normal">Hi pleased to meet you, my name is
-              Louis Thomas, I am a Sydney based
-              product designer born in Manchester,
-              England.</p>
-          </div>
-          <div class="md:w-1/2">
-            <h1 class="text-6xl md:text-r6 leading-tight">
-              <span class="text-stroke">
-                UX / UI
-                DESIGNER
-              </span>
-              <br>
+          <div class="md:w-1/2 md:order-2">
+            <h1 class="text-6xl lg:text-r6 leading-tight">
+              <span class="text-stroke"> UX / UI DESIGNER </span>
+              <br />
               <span>
                 &amp; CREATIVE
-                <strong>
-                  THINKER.
-                </strong>
+                <strong> THINKER. </strong>
               </span>
             </h1>
+          </div>
+
+          <div class="md:w-1/2 md:pr-24 md:order-1">
+            <h2 class="subheading">
+              <strong> WELCOME </strong>
+            </h2>
+            <p class="text-lg leading-normal">
+              Hi pleased to meet you, my name is Louis Thomas, I am a Sydney
+              based product designer born in Manchester, England.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div
-      class="overflow-hidden hero js loading"
-      id="work"
-    >
-      <div
-        class="content"
-        id="projects_content"
-      >
+    <div class="overflow-hidden hero js loading" id="work">
+      <div class="content" id="projects_content">
         <!-- {% for prj in collections.projects %} -->
         <article
           class="content__item"
-          v-for="(post) in posts"
-          :key="'full_'+post.id"
+          v-for="post in work_featured"
+          :key="'full_' + post.id"
         >
           <div class="img-wrap img-wrap--content">
             <div
               class="img img--content"
-              :style="'background-image: url('+ post.data.project_image.url +');'"
+              :style="
+                'background-image: url(' + post.data.project_image.url + ');'
+              "
             ></div>
           </div>
           <header class="content__item-header">
-            <span class="content__item-header-meta">{{$prismic.asText(post.data.project_name)}}</span>
+            <span class="content__item-header-meta">{{
+              $prismic.asText(post.data.project_name)
+            }}</span>
             <h2 class="content__item-header-title">
-              {{$prismic.asText(post.data.project_short)}}
+              {{ $prismic.asText(post.data.project_short) }}
             </h2>
           </header>
           <div class="content__item-copy">
             <p class="content__item-copy-text">
-              {{$prismic.asText(post.data.project_copy)}}
+              {{ $prismic.asText(post.data.project_copy) }}
             </p>
             <nuxt-link
               :to="'/projects/' + post.uid"
               class="content__item-copy-more js-slide-close underline"
-            >Explore project</nuxt-link>
+              >Explore project</nuxt-link
+            >
           </div>
         </article>
-
       </div>
       <!-- end content -->
 
@@ -82,23 +70,24 @@
       </div>
 
       <!--  -->
-      <div
-        class="grid grid--slideshow"
-        id="projects"
-      >
+      <div class="grid grid--slideshow" id="projects">
         <figure
           class="grid__item grid__item--slide"
-          v-for="(post,i) in posts"
-          :key="'item_'+post.id"
+          v-for="(post, i) in work_featured"
+          :key="'item_' + post.id"
         >
-          <span class="number text-stroke">0{{ i+1 }}</span>
+          <span class="number text-stroke">0{{ i + 1 }}</span>
           <div class="img-wrap">
             <div
               class="img"
-              :style="'background-image: url('+ post.data.project_image.url +');'"
+              :style="
+                'background-image: url(' + post.data.project_image.url + ');'
+              "
             ></div>
           </div>
-          <figcaption class="caption">{{$prismic.asText(post.data.project_name)}}</figcaption>
+          <figcaption class="caption">
+            {{ $prismic.asText(post.data.project_name) }}
+          </figcaption>
         </figure>
 
         <!--  -->
@@ -107,11 +96,11 @@
             <!-- {% for prj in collections.projects %} -->
             <h3
               class="grid__item grid__item--title"
-              v-for="(post) in posts"
-              :key="'title_'+post.id"
+              v-for="post in work_featured"
+              :key="'title_' + post.id"
             >
               <!-- {{$prismic.asText(post.data.project_name)}} -->
-              {{$prismic.asText(post.data.project_short)}}
+              {{ $prismic.asText(post.data.project_short) }}
             </h3>
             <!-- {% endfor %} -->
           </div>
@@ -122,7 +111,6 @@
           <div class="grid__item grid__item--cursor grid__item--center"></div>
           <div class="grid__item grid__item--cursor grid__item--right"></div>
         </div>
-
       </div>
     </div>
     <!--  -->
@@ -131,6 +119,26 @@
 
     <!-- <slices-block :slices="body" /> -->
 
+    <div class="max-w-6xl mx-auto relative mb-4">
+      <section class="flex flex-wrap">
+        <div
+          class="md:w-1/2 px-2 mb-4"
+          v-for="post in work_list"
+          :key="'card_' + post.id"
+        >
+          <nuxt-link :to="'/projects/' + post.uid">
+            <img
+              :src="post.data.project_image.url"
+              loading="lazy"
+              :alt="$prismic.asText(post.data.project_name)"
+            />
+            <h2 class="text-black text-xl text-right px-4">
+              {{ $prismic.asText(post.data.project_name) }}
+            </h2>
+          </nuxt-link>
+        </div>
+      </section>
+    </div>
   </main>
 </template>
 
@@ -166,15 +174,15 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.$prismic.asText(this.homepageContent.seo_description)
-        }
+          content: this.$prismic.asText(this.homepageContent.seo_description),
+        },
       ],
       script: [
         {
           hid: "anim1",
           src: "/animation/charming.min.js",
           defer: true,
-          async: true
+          async: true,
         },
         // {
         //   hid: "anim4",
@@ -186,15 +194,15 @@ export default {
           hid: "anim3",
           src: "/animation/imagesloaded.pkgd.min.js",
           defer: true,
-          async: true
+          async: true,
         },
         {
           hid: "anim2",
           src: "/animation/animation.js",
           defer: true,
-          async: true
-        }
-      ]
+          async: true,
+        },
+      ],
     };
   },
   async asyncData({ $prismic, error, store }) {
@@ -230,7 +238,7 @@ export default {
       // Returns data to be used in template
       return {
         homepageContent,
-        body: homepageContent.body
+        body: homepageContent.body,
         // featured: homepageContent.body1,
         // posts_heading: $prismic.asText(postsFeatured.primary.title_of_section),
         // posts: store.state.projects
@@ -247,8 +255,20 @@ export default {
   computed: {
     posts() {
       return this.$store.state.projects;
-    }
-  }
+    },
+    work_featured() {
+      // console.log(this.$store.state.projects);
+      // make always 4 at least
+      return this.$store.state.projects.filter(
+        (pr) => pr.data.toggle_project_featured
+      );
+    },
+    work_list() {
+      return this.$store.state.projects.filter(
+        (pr) => !pr.data.toggle_project_featured
+      );
+    },
+  },
 };
 </script>
 

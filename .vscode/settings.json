@@ -6,7 +6,8 @@
         "activityBar.foreground": "#15202b",
         "activityBar.inactiveForeground": "#15202b99",
         "activityBarBadge.background": "#37b2e8",
-        "activityBarBadge.foreground": "#15202b"
+        "activityBarBadge.foreground": "#15202b",
+        "terminal.foreground" : "#37b2e8",
     },
     "peacock.color": "#c9ee74"
 }

@@ -2,7 +2,7 @@
   "name": "blog-nuxt",
   "version": "1.0.0",
   "description": "A simple blog for Nuxt and Vue",
-  "author": "Phil Snow",
+  "author": "Matt Bagni",
   "private": true,
   "scripts": {
     "ndev": "netlify dev --port 3333",
@@ -13,11 +13,11 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@nuxtjs/prismic": "^1.2.1",
+    "@nuxtjs/prismic": "^1.2.4",
     "cookies": "^0.8.0",
     "cross-env": "^7.0.2",
     "netlify-cli": "^2.50.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.14.12",
     "prismic-javascript": "^2.7.1",
     "prismic-vue": "^2.0.1"
   },
