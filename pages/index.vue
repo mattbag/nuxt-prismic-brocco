@@ -118,27 +118,6 @@
     <!--  -->
 
     <!-- <slices-block :slices="body" /> -->
-
-    <div class="max-w-6xl mx-auto relative mb-4">
-      <section class="flex flex-wrap">
-        <div
-          class="md:w-1/2 px-2 mb-4"
-          v-for="post in work_list"
-          :key="'card_' + post.id"
-        >
-          <nuxt-link :to="'/projects/' + post.uid">
-            <img
-              :src="post.data.project_image.url"
-              loading="lazy"
-              :alt="$prismic.asText(post.data.project_name)"
-            />
-            <h2 class="text-black text-xl text-right px-4">
-              {{ $prismic.asText(post.data.project_name) }}
-            </h2>
-          </nuxt-link>
-        </div>
-      </section>
-    </div>
   </main>
 </template>
 
@@ -253,9 +232,9 @@ export default {
     }
   },
   computed: {
-    posts() {
-      return this.$store.state.projects;
-    },
+    // posts() {
+    //   return this.$store.state.projects;
+    // },
     work_featured() {
       // console.log(this.$store.state.projects);
       // make always 4 at least
@@ -263,11 +242,11 @@ export default {
         (pr) => pr.data.toggle_project_featured
       );
     },
-    work_list() {
-      return this.$store.state.projects.filter(
-        (pr) => !pr.data.toggle_project_featured
-      );
-    },
+    // work_list() {
+    //   return this.$store.state.projects.filter(
+    //     (pr) => !pr.data.toggle_project_featured
+    //   );
+    // },
   },
 };
 </script>

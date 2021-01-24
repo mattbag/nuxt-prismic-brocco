@@ -1,12 +1,11 @@
 <template>
   <div>
     <nav>
-      <ul class="p-4 flex justify-between p-1 fixed w-full top-0 left-0 z-10 text-md">
+      <ul
+        class="p-4 flex justify-between fixed w-full top-0 left-0 z-10 text-md"
+      >
         <li>
-          <nuxt-link
-            to="/"
-            class="text-xl text-pink bg-whiteOFF p-1"
-          >
+          <nuxt-link to="/" class="text-xl text-pink bg-whiteOFF p-1">
             <i>
               <strong>
                 louis
@@ -31,21 +30,27 @@
         <ul>
           <li>
             <button
-              @click="clickNav('/','#home')"
+              @click="clickNav('/', '#home')"
               class="js-menu-off font-bold font-sans text-stroke-w hover:text-white text-r6 uppercase focus:outline-none"
-            >home</button>
+            >
+              home
+            </button>
           </li>
           <li>
             <button
-              @click="clickNav('/','#work')"
+              @click="clickNav('/work', '')"
               class="js-menu-off font-bold font-sans text-stroke-w hover:text-white text-r6 uppercase focus:outline-none"
-            >work</button>
+            >
+              work
+            </button>
           </li>
           <li>
             <button
-              @click="clickNav('','#contact')"
+              @click="clickNav('', '#contact')"
               class="js-menu-off font-sans text-stroke-w hover:text-white text-r6 uppercase focus:outline-none"
-            >contact</button>
+            >
+              contact
+            </button>
           </li>
         </ul>
       </nav>
@@ -69,6 +74,10 @@ export default {
       });
     },
     clickNav(route, hash) {
+      if (!hash) {
+        this.$router.push(route);
+        return;
+      }
       let $item = document.querySelector(hash);
       if ($item) {
         setTimeout(_ => {
@@ -97,5 +106,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
